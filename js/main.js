@@ -65,11 +65,44 @@ var CarroselDestaques = {
         $('#destaques #container').cycle('resume');
     }
     
-}    
+}
   
-    
-    
+var ListaAlunos = {
+
+    filtros: function(){
+        $('ul#sidebar li').hover(
+            function(){
+                $(this).find('ul.tudo').stop(true,false).slideDown(200);
+                $(this).find('.seta').stop(true,false).fadeIn('fast')
+                $(this).find('a').has('span').css({'background-color':'#ebebeb'})
+            }, function(){
+                $(this).find('ul.tudo').stop(true,false).delay(200).slideUp(200);
+                $(this).find('.seta').stop(true,false).delay(200).fadeOut('fast')
+                $(this).find('a').has('span').delay(200).css({'background-color':'#fff'})
+            }
+        );
+    },
+
+    resumo: function(){
+        $('ul#conteudo li').hover(
+            function(){
+                $(this).find('.info').stop(true,false).slideDown(200);
+                $(this).find('h4').css({'color':'#fff', 'border-color': '#232323'});
+                $(this).css('background', '#8d1a13');
+            }, function(){
+                $(this).find('.info').stop(true,false).delay(100).slideUp(200);
+                $(this).find('h4').css({'color':'#6e6e6e', 'border-color': '#6e6e6e'});
+                $(this).css('background', '#fff');
+            }
+        );
+       
+    }
+}    
+ 
+
 jQuery(document).ready(function($) {
     Menu.init();
     CarroselDestaques.init();
+    ListaAlunos.filtros();
+    ListaAlunos.resumo();
 });
