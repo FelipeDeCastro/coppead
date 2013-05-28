@@ -1,0 +1,72 @@
+/****** GLOBAIS ******/
+.wrap{ width: 930px; margin: 0 auto; position:relative; padding:0 26px;}
+
+/****** TOPO ******/
+#topo{ background:#efefef; height:136px; width:100%;}
+#topo #menu-superior{ width:100%; background:url(img/bg-menusuperior.jpg) top center repeat-x; display: inline-block; overflow:visible;}
+
+/****** LOGO ******/
+#topo #menu-superior #logo{ position:absolute; top:0; z-index:10; left:26px; margin:0;}
+#topo #menu-superior #logo a{display:block; float:left;}
+#topo #menu-superior #logo a img{float:left;}
+
+/****** MENU PRINCIPAL ******/
+#topo #menu-superior ul{ height:68px; float:right; margin:0;}
+#topo #menu-superior ul li{ float:left; list-style-type:none;}
+#topo #menu-superior ul li a{ display:block; float:left; height:62px; line-height:62px; padding:0 15px; margin:0 15px; font-family: 'Raleway', Helvetica, Arial, sans-serif; text-transform:uppercase; font-size:13px; color:#fff; font-weight:400; text-decoration:none; border-bottom:3px solid #8d1a13; border-top:3px solid #8d1a13;}
+#topo #menu-superior ul li:hover a, #menu-superior ul li a:hover{  border-bottom:3px solid #fff;}
+#topo #menu-superior ul li input{ display:block; float:left; height:68px; width:300px; line-height:68px; padding:0 20px; margin:0 0 0 6px; font-family: 'Raleway', Helvetica, Arial, sans-serif; text-transform:uppercase; font-size:13px; color:#fff; font-weight:400; text-decoration:none; background:#6e6e6e; border:none;}
+#topo #menu-superior ul li input:hover{ background-color:#515151;}
+#topo #menu-superior ul li input.submit{ display:block; margin:0 0 0 -60px; display:block; width:60px; background-color:transparent; background:url(img/ico-busca.png) center center no-repeat;}
+
+/****** SUBMENU ******/
+#topo #menu-superior ul li ul{ position:absolute; background:#fff; width:900px; top:68px; left:0; display:none; height:0;}
+#topo #menu-superior ul li ul li{ float:left;}
+#topo #menu-superior ul li ul li a{ color:#333; border:none; border-bottom:3px solid #fff; border-top:3px solid #fff; height:62px; line-height:62px;}
+#topo #menu-superior ul li ul li a:hover{ border-bottom:3px solid #8d1a13;}
+
+/****** DESTAQUES ******/
+#destaques{ background:url(img/bg-destaques.jpg) center top repeat-x; width:100%; display:inline-block;}
+#destaques #container{}
+#destaques #container div.destaque{ height:376px; width:930px;}
+#destaques #container div.destaque h2{ position:absolute; top:0; right:0; width:210px; height:242px; padding-top:40px; overflow:hidden; line-height:30px; z-index:10; margin:0;}
+#destaques #container div.destaque h2 a{ font-family:'Raleway', Helvetica, Arial, sans-serif; text-transform:uppercase; font-size:25px; line-height:30px; color:#6d6d6d; font-weight:200; text-decoration:none;}
+#destaques #container div.destaque h2 a:hover{ text-decoration:underline;}
+#destaques #container div.destaque img{ margin-left:240px; display:block; z-index:20; position:absolute; top:0; right:0;}
+#destaques #container div.destaque a.botao{ display:block; position:absolute; top:0; right:0; z-index:30; width:690px; height:376px;}
+#destaques #container div.destaque span{}
+#destaques #container div.destaque iframe{ position:absolute; top:0; right:0; z-index:40;}
+#destaques #container div.destaque a.video{ background:url(img/destaque-btvideo.png) center center no-repeat;}
+#destaques #container div.destaque a.video:hover{ background:url(img/destaque-btvideo-hover.png) center center no-repeat;}
+#destaques ul{ position:absolute; bottom:0; left:156px; margin:0; z-index:30; padding:0;}
+#destaques ul li{ float:left; list-style-type:none; margin-left:1px;}
+#destaques ul li a#proximo-destaque, #destaques ul li a#destaque-anterior{ display:block; width:54px; height:54px; background-image:url(img/destaques-nav.jpg); float:left;}
+#destaques ul li a#proximo-destaque{ background-position:top right;}
+#destaques ul li a#destaque-anterior{ background-position:top left;}
+#destaques ul li a#proximo-destaque:hover{ background-position:bottom right;}
+#destaques ul li a#destaque-anterior:hover{ background-position:bottom left;}
+
+/****** LISTA DE ALUNOS ******/
+#lista-alunos{ width:100%; float:left; padding-bottom:60px;}
+#lista-alunos h3{ font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight:200; font-size:25px; line-height:25px; color:#8d1a13; margin:50px 0 0 0;}
+#lista-alunos p.descricao{ font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight:400; font-size:13px; line-height:28px; color:#6e6e6e; margin:0; padding-bottom:30px; border-bottom:1px solid #ccc;}
+
+/** MENU DE FILTROS **/
+#lista-alunos ul#sidebar{ float:left; width:210px; margin:40px 0 0 0; padding:0;}
+#lista-alunos ul#sidebar li{ list-style-type:none; position:relative;}
+#lista-alunos ul#sidebar li a{ display:block; position:relative; font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight:400; font-size:15px; line-height:46px; text-indent:44px; letter-spacing:-1px; color:#8d1a13; text-transform:uppercase; border:1px solid #8d1a13; background:#fff; text-decoration:none; height:46px; width:208px; background:url(img/filtros-bullet.png) 10px center no-repeat;}
+#lista-alunos ul#sidebar li a:hover{ background-color:#ebebeb;}
+#lista-alunos ul#sidebar li a:hover span.seta{ display:block; height:48px; width:6px; position:absolute; top:0; right:-6px; background:url(img/filtros-seta.png) left center no-repeat;}
+#lista-alunos ul#sidebar li a.submit{ background:url(img/botao-filtros-bullet.png) #8d1a13 10px center no-repeat; color:#fff; border-color:#464646;}
+#lista-alunos ul#sidebar li a.submit:hover{ background-color:#500e0a;}
+#lista-alunos ul#sidebar li:hover ul.tudo{ display:block;}
+
+#lista-alunos ul#sidebar li ul.selecionados{ margin:20px 0 20px 0; padding:0;}
+#lista-alunos ul#sidebar li ul.selecionados li{}
+#lista-alunos ul#sidebar li ul.selecionados li a{ text-transform:none; color#454545; background-image:url(img/subfiltros-bullet.png); border:none; line-height:28px; height:28px; letter-spacing:normal;}
+#lista-alunos ul#sidebar li ul.selecionados li a:hover{ background-color:transparent;}
+
+#lista-alunos ul#sidebar li ul.tudo{ margin:0; padding:6px 0; border-top:3px solid #8d1a13; background-color:#ebebeb; position:absolute; top:0; left:230px; width:702px; display:none;}
+#lista-alunos ul#sidebar li ul.tudo li{ float:left;}
+#lista-alunos ul#sidebar li ul.tudo li a{ margin:6px 12px; border:1px dashed #6e6e6e; background-image:none; color:#6e6e6e; text-transform:lowercase; letter-spacing:0; text-align:center; text-indent:0;}
+#lista-alunos ul#sidebar li ul.tudo li a.selecionados, #lista-alunos ul#sidebar li ul.tudo li a:hover{ background-color:#f5f5f5; border-style:solid;}
