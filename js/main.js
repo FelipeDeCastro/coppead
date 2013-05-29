@@ -1,5 +1,7 @@
+//MENU
 var Menu = {
     
+    //Animação de mouse over do menu principal
     init: function(){
         $('#topo #menu-superior ul li ul').parent('li').hover(        
             function(){
@@ -14,8 +16,12 @@ var Menu = {
 
 }
 
+//HOME: DESTAQUES
 var CarroselDestaques = {
 
+    //Inicia, configura o carrosel e chama as animações de transição
+    //Plugin: Cycle Jquery
+    //Documentação: http://jquery.malsup.com/cycle/
     init: function(){
         $('#destaques #container').cycle({
             fx:'cover',
@@ -29,15 +35,18 @@ var CarroselDestaques = {
         });
         CarroselDestaques.EscondeVideo();
     },
-                                         
+    
+    //Animação de esconder texto                                     
     EscondeTexto: function(){
         $('#destaques #container h2').stop(true,false).animate({right:0, opacity:0}, 800, 'easeOutExpo');
     },
     
+    //Animação de mostrar o texto
     MostraTexto: function(){
         $('#destaques #container h2').stop(true,false).animate({right: '720', opacity:'1'}, 500, 'easeOutQuint');
     },
     
+    //Animação de esconder o vídeo
     EscondeVideo: function(){
         var videos = $('#destaques .destaque span').map(function() { return $(this).html() || null; }).get();
         $('#destaques .destaque a.video').each(function(i){
@@ -59,6 +68,7 @@ var CarroselDestaques = {
         })    
     },   
     
+    //Função que dispara as animações de esconder texto e vídeo
     EscondeTudo: function(){
         CarroselDestaques.EscondeTexto();
         CarroselDestaques.EscondeVideo();
@@ -66,9 +76,11 @@ var CarroselDestaques = {
     }
     
 }
-  
+ 
+//HOME: LISTA DE ALUNOS  
 var ListaAlunos = {
 
+    //Comportamento do submenu de filtros
     filtros: function(){
         $('ul#sidebar li').hover(
             function(){
@@ -83,10 +95,11 @@ var ListaAlunos = {
         );
     },
 
+    //Comportamento no mouse over do resumo dos alunos
     resumo: function(){
         $('ul#conteudo li').hover(
             function(){
-                $(this).find('.info').stop(true,false).slideDown(200);
+                $(this).find('.info').stop(true,false).delay(150).slideDown(200);
                 $(this).find('h4').css({'color':'#fff', 'border-color': '#232323'});
                 $(this).css('background', '#8d1a13');
             }, function(){
@@ -99,7 +112,7 @@ var ListaAlunos = {
     }
 }    
  
-
+//Ao carregar todo o documento...
 jQuery(document).ready(function($) {
     Menu.init();
     CarroselDestaques.init();
