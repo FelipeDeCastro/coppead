@@ -82,15 +82,26 @@ var ListaAlunos = {
 
     //Comportamento do submenu de filtros
     filtros: function(){
-        $('ul#sidebar li').hover(
+        $('ul#sidebar li a.select').hover(
             function(){
-                $(this).find('ul.tudo').stop(true,false).slideDown(200);
+                $(this).siblings('ul.tudo').stop(true,false).slideDown(200);
                 $(this).find('.seta').stop(true,false).fadeIn('fast')
-                $(this).find('a').has('span').css({'background-color':'#ebebeb'})
+                $(this).css({'background-color':'#ebebeb'})
             }, function(){
-                $(this).find('ul.tudo').stop(true,false).delay(200).slideUp(200);
+                $(this).siblings('ul.tudo').stop(true,false).delay(200).slideUp(200);
                 $(this).find('.seta').stop(true,false).delay(200).fadeOut('fast')
-                $(this).find('a').has('span').delay(200).css({'background-color':'#fff'})
+                $(this).delay(200).css({'background-color':'#fff'})
+            }
+        );
+        $('ul#sidebar li ul.tudo').hover(
+            function(){
+                $(this).stop(true,false).slideDown(200);
+                $(this).siblings('a.select').find('.seta').stop(true,false).fadeIn('fast')
+                $(this).siblings('a.select').css({'background-color':'#ebebeb'})
+            }, function(){
+                $(this).stop(true,false).delay(200).slideUp(200);
+                $(this).siblings('a.select').find('.seta').delay(200).fadeOut('fast')
+                $(this).siblings('a.select').delay(200).css({'background-color':'#fff'})
             }
         );
     },
@@ -99,11 +110,11 @@ var ListaAlunos = {
     resumo: function(){
         $('ul#conteudo li').hover(
             function(){
-                $(this).find('.info').stop(true,false).delay(150).slideDown(200);
+                $(this).find('.info').stop(true,false).delay(150).slideDown(600, 'easeOutQuint');
                 $(this).find('h4').css({'color':'#fff', 'border-color': '#232323'});
                 $(this).css('background', '#8d1a13');
             }, function(){
-                $(this).find('.info').stop(true,false).delay(100).slideUp(200);
+                $(this).find('.info').stop(true,false).delay(100).slideUp(600, 'easeOutQuint');
                 $(this).find('h4').css({'color':'#6e6e6e', 'border-color': '#6e6e6e'});
                 $(this).css('background', '#fff');
             }
@@ -111,6 +122,28 @@ var ListaAlunos = {
        
     }
 }    
+
+//DETALHES DO ALUNO
+var Aluno ={
+
+    //Abas de navegação
+    navegacaoAbas: function(){
+
+        $('#conteudo2, #conteudo3').hide()
+ 
+        $('ul#abas li a').click(function(e){
+            e.preventDefault();
+
+            var target = $(this).attr('href')
+
+            $('ul#abas li a').removeClass('active');
+            $('#conteudo1, #conteudo2, #conteudo3').fadeOut(300)
+            $(this).addClass('active');
+            $(target).delay(300).fadeIn('fast');
+        })
+    }
+}
+
  
 //Ao carregar todo o documento...
 jQuery(document).ready(function($) {
@@ -118,4 +151,5 @@ jQuery(document).ready(function($) {
     CarroselDestaques.init();
     ListaAlunos.filtros();
     ListaAlunos.resumo();
+    Aluno.navegacaoAbas();
 });
