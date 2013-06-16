@@ -221,6 +221,7 @@ var Depoimentos = {
                 $(this).find('.wrap').css('background-image', 'url(' + imagemNormal + ')');
             }
             else{
+                var imagemNormal = $(this).attr('rel1');
                 var imagemMaior = $(this).attr('rel3');
                 $('#detalhes .depoimento').removeClass('aberto')
                 $('#detalhes .depoimento').find('.wrap').find('p').hide();
