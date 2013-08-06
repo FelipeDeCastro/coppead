@@ -1,0 +1,28 @@
+<?php 
+$destaques = new WP_Query(); 
+$destaques->query(array(
+    'post_type' => 'destaque',
+)); ?>
+                                            
+<?php while($destaques->have_posts()) { ?>
+    <?php $destaques->the_post(); ?>
+
+    <div class="destaque">
+        <h2><a href="<?php echo get('informacoes_adicionais_link'); ?>"><?php the_title(); ?></a></h2>
+        <img src="<?php echo get('informacoes_adicionais_foto'); ?>" width="690px" height="376px"/>
+
+        <?php $vimeo = get('informacoes_adicionais_vimeo'); ?>
+        <?php $youtube = get('informacoes_adicionais_youtube'); ?>
+        <?php if (!empty( $vimeo ) && empty( $youtube)) { ?>
+            <span><iframe src="http://player.vimeo.com/video/<?php echo $vimeo; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=8d1a13&amp;autoplay=1" width="690" height="376" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></span>
+        <?php } else if (empty( $vimeo ) && !empty( $youtube)) { ?>
+            <span><iframe src="//www.youtube.com/embed/j2dpN2yV6sE?rel=0&amp;autoplay=1&amp;controls=2&amp;showinfo=0" width="690" height="376" frameborder="0" allowfullscreen></iframe></span>
+        <?php } else { ?>
+        <?php } ?>
+
+        <a href="#" class="botao"></a>
+    </div>
+
+<?php } ?>
+
+<?php wp_reset_postdata(); ?>
