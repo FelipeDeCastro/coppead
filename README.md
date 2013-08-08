@@ -4,8 +4,9 @@ Turma de Mestrado 2013 - Coppead
 <h2>Cliente</h2>
 Mestrado Coppead
 
-<h2>Objetivo</h2>
-Repensar o site atual do Mestrado Coppead, com base na identidade visual nova do site Coppead, dando foco nos filtros de busca por aluno/áreas de interesse. O objetivo do site é facilitar a estrutura de catalogação de alunos criando um ambiente unificado, que possa ser utilizado para as próximas turmas.
+<h2>Objetivos</h2>
+- Repensar o site atual do curso, com base na identidade visual nova da Coppead, dando foco nos filtros de busca por aluno/áreas de interesse.
+- Facilitar a estrutura de catalogação dos alunos, criando um ambiente unificado a ser utilizado também pelas próximas turmas.
 
 <h2>Escopo</h2>
 
@@ -20,7 +21,6 @@ Integração de todo o site a um sistema de gerenciamento de conteúdo(CMS), ond
 <h2>Responsáveis</h2>
 - Arquitetura / Direção de arte: Ítalo Monteiro
 - Programação / Implementação: Felipe Castro
-- Coordenação: Camilla Cordeiro
 		
 
 <h2>Sitemap</h2>
